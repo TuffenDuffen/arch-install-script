@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 # Configure time
 timedatectl set-ntp true
