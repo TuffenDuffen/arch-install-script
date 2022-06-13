@@ -22,3 +22,15 @@ echo "KEYMAP=sv-latin1" > "/etc/vconsole.conf"
 echo "tuffen-Mac" > "/etc/hostname"
 
 passwd
+
+# Add user
+groupadd sudo
+useradd -m -G sudo -s fish tuffen
+passwd tuffen
+
+# Add sudo permission
+sed -i "s/^#%sudo	ALL=(ALL:ALL) ALL/%sudo	ALL=(ALL:ALL) ALL/"
+
+bootctl install
+
+exit
