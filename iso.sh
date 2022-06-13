@@ -25,4 +25,4 @@ chmod +x /mnt/chroot.sh
 
 # chroot into new system
 genfstab -U /mnt >> /mnt/etc/fstab
-arch-chroot /mnt chroot.sh
+arch-chroot /mnt ./chroot.sh
