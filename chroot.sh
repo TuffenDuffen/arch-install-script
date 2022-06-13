@@ -31,6 +31,8 @@ passwd tuffen
 # Add sudo permission
 sed -i "s/^#%sudo	ALL=(ALL:ALL) ALL/%sudo	ALL=(ALL:ALL) ALL/" /etc/sudoers
 
+# Installing bootloader
+pacman -S intel-ucode
 bootctl install
 
 exit
