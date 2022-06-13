@@ -32,7 +32,8 @@ passwd tuffen
 sed -i "s/^#%sudo	ALL=(ALL:ALL) ALL/%sudo	ALL=(ALL:ALL) ALL/" /etc/sudoers
 
 # Installing bootloader
-pacman -S intel-ucode
 bootctl install
+
+pacman -S intel-ucode
 
 exit
