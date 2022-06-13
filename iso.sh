@@ -4,7 +4,7 @@
 timedatectl set-ntp true
 
 # Create 512mB EFI, 8gB swap & root partition using fdisk
-printf 'g\nn\n\n\n+512M\ny\nt\n1\nn\n\n\n+8G\ny\nt\n\n19\nn\n\n\n\ny\nw\n' | fdisk /dev/sda
+printf 'g\nn\n\n\n+512M\nt\n1\nn\n\n\n+8G\nt\n\n19\nn\n\n\n\nw\n' | fdisk /dev/sda
 
 # Fomat file systems
 mkfs.ext4 /dev/sda3
