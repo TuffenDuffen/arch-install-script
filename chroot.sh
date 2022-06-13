@@ -6,7 +6,7 @@ hwclock --systohc
 sed -i "s/^#sv_SE.UTF-8 UTF-8/sv_SE.UTF-8 UTF-8/" /etc/locale.gen
 sed -i "s/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/" /etc/locale.gen
 
-locale-gen | /dev/null
+locale-gen
 
 # Creating locale.conf
 cat > /etc/locale.conf << EOF
