@@ -37,4 +37,19 @@ mkinitcpio -P
 pacman -S intel-ucode
 bootctl install
 
+# Making arch bootable
+e2label /dev/sda3 root
+cat > /boot/loader/loader.conf << EOF
+default  arch.conf
+timeout 3
+console-mode max
+EOF
+cat > /boot/loader/entries/arch.conf << EOF
+title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /intel-ucode.img
+initrd  /initramfs-linux.img
+options root="LABEL=root" rw
+EOF
+
 exit
